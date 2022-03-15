@@ -18,7 +18,11 @@
     gain creators 
     your users:
     customer job: filling in the survey, searching for a bar, looking at pictures, 
-    have in mind 1 user category (make only 1) 
+    have in mind 1 user category (make only 1)
+
+![alt](https://github.com/KaatWillems/Set-The-Bar/blob/master/Value-propo-product.png) 
+![alt](https://github.com/KaatWillems/Set-The-Bar/blob/master/Value-propo-user.png)
+
     
   <h2> 2) Create persona </h2>
 
@@ -38,3 +42,5 @@
         <p>which actions bring the user to that key action? </p>
         
    </ol>
+
+   ![alt](https://github.com/KaatWillems/Set-The-Bar/blob/master/user-story.png)
