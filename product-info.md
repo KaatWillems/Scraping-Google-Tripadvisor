@@ -21,6 +21,8 @@
     have in mind 1 user category (make only 1) 
     
   <h2> 2) Create persona </h2>
+
+  ![alt](https://github.com/KaatWillems/Set-The-Bar/blob/master/Persona-marie.png)
     
         
   <h2> 3) User stories - customer journey </h2>
