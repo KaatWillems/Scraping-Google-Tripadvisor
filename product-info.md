@@ -44,3 +44,15 @@
    </ol>
 
    ![alt](https://github.com/KaatWillems/Set-The-Bar/blob/master/user-story.png)
+
+   ## 4) Mockups 
+
+   app.moqups.com 
+
+   1) First create a 'plain' mockup without visuals per post it (per action)
+   2) click on a thing you made, and click right 'interactions' to add eventlisteners etc. to connect them together. 
+   3) Think about where the data comes from (from API, from data scraping which website, data from users)
+
+### Functionalities to add:
+- filters : garbage sign to clear the filter if you dont care about it anymore 
+
