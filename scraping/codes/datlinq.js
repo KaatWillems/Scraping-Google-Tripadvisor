@@ -204,5 +204,5 @@ const scrapBars = async () => {
   }
 };
 
-scrapBars();
+module.exports = {scrapBars}
 

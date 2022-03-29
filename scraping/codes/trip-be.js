@@ -3,28 +3,7 @@ const fs = require("fs");
 
 process.setMaxListeners(Infinity);
 
-const baseurlList = [
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa30-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa60-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa90-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa120-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa150-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa180-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa210-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa240-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa270-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa300-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa330-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa360-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa390-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa420-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa450-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa480-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa510-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa540-Belgium.html",
-  "https://www.tripadvisor.com/Attractions-g188634-Activities-c20-t99-oa570-Belgium.html",
-];
+let baseurlList = JSON.parse(fs.readFileSync("./urls/trip-be.json"))
 
 const scrapUrls = async (url) => {
   const browser = await puppeteer.launch({ headless: true });
@@ -118,3 +97,6 @@ const scrapContent = async (urls) => {
 for (const i of baseurlList) {
   scrapUrls(i);
 }
+
+
+module.exports = { scrapUrls };

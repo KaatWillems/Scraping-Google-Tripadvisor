@@ -2,10 +2,13 @@ const puppeteer = require("puppeteer");
 
 let hnp = true;
 
-async function parsePlaces(page) {
-  let location = [];
+// parse
 
-  const adress = await page.$$('span[jstcache="79"][jsinstance="*1"]');
+async function parsePlaces(page) {
+  let places = [];
+
+  const elements = await page.$$(".gm2-subtitle-alt-1 span");
+  // const adress = await page.$$('span[jstcache="79"][jsinstance="*1"]')
 
   if (elements && elements.length) {
     for (const el of elements) {
@@ -20,6 +23,8 @@ async function parsePlaces(page) {
 // stop the loop
 
 async function hasNextPage(page) {
+  // const element = await page.$('button[aria-label=" Next page "]');
+  // console.log("tessttttt last page")
   await page.waitForTimeout(3000);
   const element = await page.evaluate(() => {
     el = document.querySelectorAll('button[aria-label="Page suivante"]')[2];
@@ -30,7 +35,11 @@ async function hasNextPage(page) {
       return false;
     }
   });
+  // if (!element) {
+  //     throw new Error('Next page element is not found');
+  // }
   console.log(element);
+  // const disabled = element.getAttribute('disabled')
   if (element != null) {
     console.log("The next page button is disabled");
     hnp = false;
@@ -58,9 +67,11 @@ async function autoScroll(page) {
     });
   });
 }
-
 async function goToNextPage(page) {
   await page.$$eval(".hV1iCc-icon", (elements) => elements[1].click());
+  // await page.$$(('button[aria-label="Page suivante"]')[2]).click;
+  // await page.$$('button[aria-label="Page suivante"]')[2].click()
+  // await page.evaluate(() => {document.querySelectorAll('button[aria-label="Page suivante"]')[2].click(); });
   await page.waitForNavigation();
 }
 
@@ -70,7 +81,7 @@ async function Scraping() {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.goto(
-    "https://www.google.be/maps/search/bar+belgium/@50.8429293,4.3485584,14z/data=!3m1!4b1"
+    "https://www.google.be/maps/search/bar+belgium/@50.8429293,4.3485584,14z/data=!3m1!4b1%27"
   );
   await page.$$eval(".VfPpkd-vQzf8d", (elements) => elements[3].click());
   await page.waitForNavigation();
@@ -92,4 +103,4 @@ async function Scraping() {
   console.log(places);
 }
 
-Scraping();
+module.exports = { Scraping };
