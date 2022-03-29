@@ -16,7 +16,7 @@ const UserSchema  = new mongoose.Schema({
     type  : String,
     required : true
   } ,
-  date :{
+  date :{ // comment Kaat: do we need data in the user? 
     type : Date,
     default : Date.now
   },
