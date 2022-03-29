@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^13.5.1"
+    "nodemon": "^2.0.15",
+    "puppeteer": "^13.5.1",
+    "xpath": "^0.0.32"
   }
 }
