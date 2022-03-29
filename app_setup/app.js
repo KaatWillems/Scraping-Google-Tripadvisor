@@ -13,9 +13,9 @@ const fileupload = require('express-fileupload')
 
 //passport config:
 require('./config/passport')(passport)
-//mongoose
-mongoose.connect('',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected,,'))
+//mongoose (connected with Set the bar)
+mongoose.connect('mongodb+srv://Setthebar:Setthebar100@cluster0.pxj0m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology : true})
+.then(() => console.log('connected with Setthebar DB'))
 .catch((err)=> console.log(err));
 
 
@@ -72,4 +72,4 @@ app.use('/posts',require('./routes/posts'));
 
 
 
-app.listen(3000);
+app.listen(4000);
