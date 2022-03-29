@@ -1,4 +1,4 @@
-const mongoose = require('mongoose'); //SET THE BAR = WE DONT NEED THIS 
+const mongoose = require('mongoose'); 
 const PostSchema  = new mongoose.Schema({
   title :{
       type  : String,
