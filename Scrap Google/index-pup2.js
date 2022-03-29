@@ -3,13 +3,33 @@ const puppeteer = require('puppeteer')
 
 let hnp = true
 
-// parse
+// parse places name
+
+// async function parsePlaces(page) {
+//     let places = [];
+
+// 	const elements = await page.$$('.gm2-subtitle-alt-1 span')
+//     // const adress = await page.$$('span[jstcache="79"][jsinstance="*1"]')
+
+
+//     if (elements && elements.length) {
+//         for (const el of elements) 	{
+//             const name = await el.evaluate(span => span.textContent);
+            
+//             places.push({ name })
+//        }
+//    }
+//    return places;
+
+// }
+
+// parse places location
 
 async function parsePlaces(page) {
-    let places = [];
+    let location = [];
 
-	const elements = await page.$$('.gm2-subtitle-alt-1 span')
-    // const adress = await page.$$('span[jstcache="79"][jsinstance="*1"]')
+	//const elements = await page.$$('.gm2-subtitle-alt-1 span')
+    const adress = await page.$$('span[jstcache="79"][jsinstance="*1"]')
 
 
     if (elements && elements.length) {
