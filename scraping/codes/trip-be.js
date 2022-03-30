@@ -3,6 +3,8 @@ const fs = require("fs");
 
 process.setMaxListeners(Infinity);
 
+
+
 let baseurlList = JSON.parse(fs.readFileSync("./urls/trip-be.json"))
 
 const scrapUrls = async (url) => {
@@ -25,7 +27,9 @@ const scrapUrls = async (url) => {
 };
 
 const createjson = async (databar) => {
-  console.log(databar[databar.length - 1]);
+  //function to write it all in json file - gets called on line 149
+
+  //console.log(databar[databar.length-1]); // to console log the last url
 
   fs.writeFile("./bars.json", JSON.stringify(databar, null, 3), (err) =>
     err ? console.log(err) : null
@@ -43,9 +47,8 @@ const scrapContent = async (urls) => {
     bar = {};
 
     await page.goto(urls[i]);
-    await page.waitForTimeout(20000);
+    await page.waitForTimeout(15000);
 
-    //====FIX ISSUE OF UNDEFINDED OR NULL
     const barNameDiv = await page.evaluate(() => {
       let a = document.querySelector(".WlYyy.cPsXC.GeSzT");
       return a ? a.innerText.trim() : "no name found";
@@ -90,13 +93,15 @@ const scrapContent = async (urls) => {
   }
 
   await browser.close();
+  //console.log(barData) // to have everything shown in the terminal instead of jsonfile
 
   await createjson(barData);
 };
 
+//looping over all pages:
 for (const i of baseurlList) {
+  //console.log(i);
   scrapUrls(i);
 }
 
-
-module.exports = { scrapUrls };
+//scrapUrls(baseurl)
