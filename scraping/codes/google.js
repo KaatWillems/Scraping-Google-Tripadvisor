@@ -75,10 +75,10 @@ async function goToNextPage(page) {
   await page.waitForNavigation();
 }
 
-async function Scraping() {
+async function scrapGoogle() {
   console.log("scrapping...");
 
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(
     "https://www.google.be/maps/search/bar+belgium/@50.8429293,4.3485584,14z/data=!3m1!4b1%27"
@@ -100,7 +100,7 @@ async function Scraping() {
     hasNextPage(page);
   } while (hnp);
 
-  console.log(places);
+  return places
 }
 
-module.exports = { Scraping };
+module.exports = { scrapGoogle };
