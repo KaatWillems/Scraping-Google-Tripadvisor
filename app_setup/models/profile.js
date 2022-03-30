@@ -18,7 +18,7 @@ const ProfileSchema  = new mongoose.Schema({
   favoritebars : [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "favoritebar"
+      ref: "bar"
     }
   ]
 });

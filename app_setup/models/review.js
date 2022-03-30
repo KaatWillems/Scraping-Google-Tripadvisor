@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const ProfileSchema = require("./profile").ProfileSchema
+
 const ReviewSchema  = new mongoose.Schema({
   rating :{
       type  : Number,
@@ -28,12 +30,7 @@ const ReviewSchema  = new mongoose.Schema({
     type : Date,
     default : Date.now
   },
-  bars : [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "bar"
-    }
-  ]
+  profile: ProfileSchema 
 });
 const Review = mongoose.model('Review',ReviewSchema);
 
