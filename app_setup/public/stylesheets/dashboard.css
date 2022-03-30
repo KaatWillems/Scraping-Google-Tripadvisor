@@ -576,21 +576,105 @@ a {
 .title {
     color: #dbdbdb;
     font-size: 5rem;
-    font-weight: 300;
+    font-weight: 400;
     font-family: 'Lato', sans-serif;
 }
 .title-container {
     width: 80%;
     float: left;
+    margin: 2rem;
 }
 
 /*-- Carousel -- CSS --*/
 
+.carousel-container {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+    padding-left:70px;
 
+
+}
+.carousel-row {
+    flex: 0 0 85%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+  
+.carousel-image {
+    border-radius: 30px;
+    background-image: url(https://picsum.photos/200/300) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 95%;
+    height: 70%;
+}
+.carousel-text-container {
+    width: 95%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-heart {
+    width: 80px;
+    height: 80px;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709188039684096/unknown.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.carousel-rating {
+    width: 500px;
+    height: 50px;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+.carousel-barname {
+    font-size: 4rem;
+    font-family: 'Lato', sans-serif;
+    color: whitesmoke;
+    width: 500px;
+    height: 50px;
+}
+
+
+/*
+.blue {
+    background-color: blue;
+}
+.black {
+    background-color: black;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
+.orange {
+    background-color: orangered;
+}
+
+*/
 /*-- Nav-bar -- CSS --*/
 
 .navigation-tab {
-    width: 100%;
+    width: 100vw;
     height: 5vh;
     background-color: #FFFFFF;
     display: flex;
