@@ -461,6 +461,9 @@ Remove or comment-out the code block below to see how the browser will fall-back
     text-align: center;
     height: 35vh;
 }
+.input-register-info-container {
+    margin-top: 5vh;
+}
 .input-info {
     margin-bottom: 3rem;
     font-family: 'Lato', sans-serif;
@@ -478,7 +481,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
     justify-content: center;
     font-size: 3rem;
     display: flex;
-    color: #006466 ;
+    color: whitesmoke ;
 }
 .tier-logo {
     background-image: url(https://www.topone.be/wp-content/uploads/2017/01/facebook-icon-preview-1-400x400.png);
@@ -501,4 +504,8 @@ Remove or comment-out the code block below to see how the browser will fall-back
 }
 .no-account span {
     color: #006466;
+}
+a {
+    text-decoration: none;
+
 }
