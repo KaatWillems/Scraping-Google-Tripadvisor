@@ -1,3 +1,4 @@
+// Kaat: SHOULD BE DELETED BUT I KEEP TO KEEP APP RUNNING FOR NOW
 const mongoose = require('mongoose');
 const PostSchema  = new mongoose.Schema({
   title :{
@@ -21,4 +22,5 @@ const PostSchema  = new mongoose.Schema({
 const Post = mongoose.model('Post',PostSchema);
 
 module.exports = {Post, PostSchema};
+
 

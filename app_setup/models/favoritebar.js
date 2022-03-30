@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const ProfileSchema = require("./profile").ProfileSchema
+
 const FavoritebarSchema  = new mongoose.Schema({
   profile: ProfileSchema, //like in the user.js schema. but not sure if correct (kaat)
   bars : [
