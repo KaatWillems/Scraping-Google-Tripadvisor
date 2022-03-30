@@ -26,6 +26,7 @@ body {
     min-height: 100vh;
     background-color: #fafafa;
     color: #262626;
+    height: 300vh;
 }
 
 img {
@@ -204,6 +205,7 @@ img {
 }
 
 .gallery-item:hover .gallery-item-info,
+
 .gallery-item:focus .gallery-item-info {
     display: flex;
     justify-content: center;
@@ -517,7 +519,7 @@ a {
 .dashboard-container {
     background-color: #4D194D;
     width: 100vw;
-    height: 100vh;
+    height: 300vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -653,24 +655,26 @@ a {
 }
 
 
-/*
-.blue {
-    background-color: blue;
+/* -- Location - container --*/
+
+.location-general-container {
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    width: 90vw;
+    height: 80vh;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+
 }
-.black {
-    background-color: black;
+.my-location-container {
+    background-color: #006466;
+    font-size: 5rem;
+
 }
-.yellow {
+.location-container {
     background-color: yellow;
 }
-.green {
-    background-color: green;
-}
-.orange {
-    background-color: orangered;
-}
-
-*/
 /*-- Nav-bar -- CSS --*/
 
 .navigation-tab {
