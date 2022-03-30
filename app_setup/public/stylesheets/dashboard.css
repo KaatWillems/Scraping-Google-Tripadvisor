@@ -7,8 +7,7 @@ The 'supports' rule will only run if your browser supports CSS grid.
 Flexbox and floats are used as a fallback so that browsers which don't support grid will still recieve a similar layout.
 
 */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Satisfy&display=swap');
-/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Satisfy&display=swap');/* Base Styles */
 
 :root {
     font-size: 10px;
@@ -416,9 +415,13 @@ Remove or comment-out the code block below to see how the browser will fall-back
     }
 }
 
-/*-- Log-In-CSS --*/
+/*-- Log-In -- Register -- CSS --*/
 
-#Log-in-container {
+iframe {
+    padding-top: 1vh;
+}
+
+.Log-in-container {
     background-color: #4D194D;
     width: 100vw;
     height: 100vh;
@@ -507,5 +510,125 @@ Remove or comment-out the code block below to see how the browser will fall-back
 }
 a {
     text-decoration: none;
+}
+
+/*-- Dashboard -- CSS --*/
+
+.dashboard-container {
+    background-color: #4D194D;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+/*-- Searchbar -- CSS --*/
+
+
+.set-the-bar-search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem;
+    background-color: rgba(255, 255, 255, 0.356);
+    width: 80vw;
+    height: 3vh;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
+.icon-mic {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958668094757298186/unknown.png);
+}
+.icon-loupe {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958667761184288798/unknown.png);
+}
+.search-input {
+    background-color: #4d194d00;
+    border: none;
+    font-size: 4rem;
+    font-family: 'Lato', sans-serif;
+    width: 85%;
+
+}
+.search-input::placeholder {
+    font-weight: 400;
+    color: #4D194D;
+
+}
+
+.title {
+    color: #dbdbdb;
+    font-size: 5rem;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+}
+.title-container {
+    width: 80%;
+    float: left;
+}
+
+/*-- Carousel -- CSS --*/
+
+
+/*-- Nav-bar -- CSS --*/
+
+.navigation-tab {
+    width: 100%;
+    height: 5vh;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+.navigation-explore {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
+}
+.navigation-review {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
+}
+.navigation-favorites {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
+}
+.navigation-profile {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
+}
+
