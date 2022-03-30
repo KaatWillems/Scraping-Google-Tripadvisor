@@ -1,25 +1,24 @@
 const mongoose = require('mongoose');
+
 const ProfileSchema  = new mongoose.Schema({
   username :{
       type  : String,
       required : true
-  } ,
-  favorite_animal :{
+  },
+  profilePic :{
     type  : String,
-    required : true
-  } ,
-  popularity_level :{
-    type  : Number,
-    required : true
-  } ,
-  date :{
+  },
+  requirementsForBars:{
+    type  : String,
+  },
+  date :{  // not sure if we should keep this (kaat)
     type : Date,
     default : Date.now
   },
-  posts : [
+  favoritebars : [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Post"
+      ref: "bar"
     }
   ]
 });
