@@ -5,16 +5,24 @@ const BarSchema  = new mongoose.Schema({
       type  : String,
       required : true
   } ,
+  addressZip :{
+    type  : String,
+    
+  } ,
   addressCity :{
     type  : String,
     required : true
   } ,
   addressStreet: {
     type  : String,
-    required : true
+    
   },
   addressNumber: {
     type  : String,   // I put string because sometimes the housenumber can contain letters 
+    
+  },
+  addressCountry: {
+    type  : String,  
     required : true
   },
   siteUrl: {
@@ -27,7 +35,7 @@ const BarSchema  = new mongoose.Schema({
     type  : String,
   },
   ratings: {
-    type  : Number,
+    type  : String,
   },
   reviews : [
     {
