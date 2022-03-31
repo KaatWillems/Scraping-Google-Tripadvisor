@@ -14,6 +14,7 @@
 
 
 
+  
 
 
 
@@ -24,11 +25,13 @@
   </div>
   <div class="set-the-bar-search-bar">
     <div class="icon-loupe"></div>
-    <input type="text" placeholder="Search Location" class="search-input">
+    <form action=/bars/search action="POST">
+      <input type="text" placeholder="Search Location" class="search-input">
+    </form>
     <div class="icon-mic"></div>  
   </div>
   <div class="title-container">
-    <h2 class="title">Trending Bars</h2>
+    <h2 class="title" id="test1">Trending Bars</h2>
   </div>
   <div class="carousel-container">
     <div class="carousel-row">
@@ -155,7 +158,9 @@
   </div>
 
 </div>
-
+<p> Welcome <%= user.email %></p>
+<a href="/users/logout">Logout</a>
+<script src="static/scripts/searchProfile.js"></script>
 
 
 
