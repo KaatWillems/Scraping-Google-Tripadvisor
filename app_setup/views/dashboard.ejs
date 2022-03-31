@@ -24,49 +24,34 @@
   </div>
   <div class="set-the-bar-search-bar">
     <div class="icon-loupe"></div>
+    <form action="/bars/search" method="POST">
     <input type="text" placeholder="Search Location" class="search-input">
+  </form>
     <div class="icon-mic"></div>  
   </div>
   <div class="title-container">
     <h2 class="title">Trending Bars</h2>
   </div>
   <div class="carousel-container">
+
+    <% bars.forEach((bar) => { %>
+
     <div class="carousel-row">
       <div class="carousel-image">
 
       </div>
       <div class="carousel-text-container">
         <div class="carousel-text">
-          <div class="carousel-barname">Le tavernier</div>
+          <div class="carousel-barname"><%= bar.name %></div>
           <div class="carousel-rating"></div>
         </div>
         <div class="carousel-heart"></div>
       </div>
     </div>
-    <div class="carousel-row">
-      <div class="carousel-image">
 
-      </div>
-      <div class="carousel-text-container">
-        <div class="carousel-text">
-          <div class="carousel-barname">Le tavernier</div>
-          <div class="carousel-rating"></div>
-        </div>
-        <div class="carousel-heart"></div>
-      </div>
-    </div>
-    <div class="carousel-row">
-      <div class="carousel-image">
+    <% }) %>
 
-      </div>
-      <div class="carousel-text-container">
-        <div class="carousel-text">
-          <div class="carousel-barname">Le tavernier</div>
-          <div class="carousel-rating"></div>
-        </div>
-        <div class="carousel-heart"></div>
-      </div>
-    </div>
+
 
   </div>
   <div class="title-container">

@@ -3,6 +3,7 @@ const router  = express.Router();
 const {ensureAuthenticated} = require('../config/auth')
 const Profile = require("../models/profile").Profile;
 const Post = require("../models/post").Post
+const Bar = require("../models/bar").Bar
 
 //login page diogo 
 // router.get('/', (req,res)=>{
@@ -37,10 +38,15 @@ router.get('/register', (req,res)=>{
 
 
 
-router.get('/dashboard',ensureAuthenticated,(req,res)=>{
+router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     if(!req.user.profile){
+      let bars = await Bar.find()
+      // let trendingbars
+      console.log(bars)
       res.render('dashboard',{
-        user: req.user
+        user: req.user,
+        bars: bars,
+
       });
     }else{
       renderDashboardWithPosts(req, res)
