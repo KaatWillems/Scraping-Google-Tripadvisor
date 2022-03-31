@@ -5,4 +5,3 @@ const User = require("../models/user")
 // const cloudinary = require("cloudinary");
 
 
-router.post("/bars/search", async ())

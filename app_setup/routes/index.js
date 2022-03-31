@@ -34,18 +34,50 @@ router.get('/register', (req,res)=>{
 //       user: req.user,
 //       posts: posts
 //   });
+
+
 // }
+
+function getStars(bar) { 
+  let rating = bar.ratings;
+  ratingarr = rating.split(',')
+  console.log(ratingarr)
+  starNbr = parseInt(ratingarr[0])
+  console.log(starNbr)
+  let finalArr = []
+  for (let i = 0; i < starNbr; i++) {
+    finalArr.push('*')
+    
+  }
+  if(ratingarr[1]){
+    finalArr.push("/")
+  } else if (!starNbr[1] && starNbr < 5) {
+
+    finalArr.push(" ")
+    }
+
+
+  return finalArr
+}
 
 
 
 router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     if(!req.user.profile){
+      
+
+
+      bararr = []
+
       let bars = await Bar.find()
+      bars.forEach((bar) => {
+        bararr.push({bar: bar, barrating: getStars(bar)})
+      })
+      console.log(bararr)
       // let trendingbars
-      console.log(bars)
       res.render('dashboard',{
         user: req.user,
-        bars: bars,
+        bars: bararr,
 
       });
     }else{

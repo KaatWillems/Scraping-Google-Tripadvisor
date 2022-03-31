@@ -29,73 +29,88 @@
   </form>
     <div class="icon-mic"></div>  
   </div>
-  <div class="title-container">
-    <h2 class="title">Trending Bars</h2>
-  </div>
-  <div class="carousel-container">
-
-    <% bars.forEach((bar) => { %>
-
-    <div class="carousel-row">
-      <div class="carousel-image">
-
-      </div>
-      <div class="carousel-text-container">
-        <div class="carousel-text">
-          <div class="carousel-barname"><%= bar.name %></div>
-          <div class="carousel-rating"></div>
-        </div>
-        <div class="carousel-heart"></div>
-      </div>
+ <div class="carousel-general-container">
+    <div class="title-container">
+      <h2 class="title">Trending Bars</h2>
     </div>
-
-    <% }) %>
-
-
-
-  </div>
-  <div class="title-container">
-    <h2 class="title">Safest Bars</h2>
-  </div>
-  <div class="carousel-container">
-    <div class="carousel-row">
-      <div class="carousel-image">
-
-      </div>
-      <div class="carousel-text-container">
-        <div class="carousel-text">
-          <div class="carousel-barname">Le tavernier</div>
-          <div class="carousel-rating"></div>
+    <div class="carousel-container">
+  
+      <% bars.forEach((bar) => { %>
+  
+      <div class="carousel-row">
+        <div class="carousel-image" style="background-image:url(<%= bar.bar.pictureUrl%>)">
+  
         </div>
-        <div class="carousel-heart"></div>
-      </div>
-    </div>
-    <div class="carousel-row">
-      <div class="carousel-image">
-
-      </div>
-      <div class="carousel-text-container">
-        <div class="carousel-text">
-          <div class="carousel-barname">Le tavernier</div>
-          <div class="carousel-rating"></div>
+        <div class="carousel-text-container">
+          <div class="carousel-text">
+            <div class="carousel-barname"><%= bar.bar.name %></div>
+            <div class="carousel-rating">
+            
+            <span class=stars> 
+              <% bar.barrating.forEach((rating) => { %>
+                <% if(rating === "*"){ %>
+                  <i class="fa fa-star" aria-hidden="true" style="color: gold; font-size: 5rem;"></i>
+                <% } else if (rating === "/") { %>
+                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: gold; font-size: 5rem;"></i>
+                <% } else { %>
+                  <i class="fa fa-star-o" aria-hidden="true" style="color: gold; font-size: 5rem;"></i>                
+                <% } %>
+              <% }) %>
+            </span>
+            </div>
+          </div>
+          <div class="carousel-heart"></div>
         </div>
-        <div class="carousel-heart"></div>
       </div>
+  
+      <% }) %>
+  
+  
+  
     </div>
-    <div class="carousel-row">
-      <div class="carousel-image">
-
-      </div>
-      <div class="carousel-text-container">
-        <div class="carousel-text">
-          <div class="carousel-barname">Le tavernier</div>
-          <div class="carousel-rating"></div>
+    <div class="title-container">
+      <h2 class="title">Safest Bars</h2>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel-row">
+        <div class="carousel-image">
+  
         </div>
-        <div class="carousel-heart"></div>
+        <div class="carousel-text-container">
+          <div class="carousel-text">
+            <div class="carousel-barname">Le tavernier</div>
+            <div class="carousel-rating"></div>
+          </div>
+          <div class="carousel-heart"></div>
+        </div>
       </div>
+      <div class="carousel-row">
+        <div class="carousel-image">
+  
+        </div>
+        <div class="carousel-text-container">
+          <div class="carousel-text">
+            <div class="carousel-barname">Le tavernier</div>
+            <div class="carousel-rating"></div>
+          </div>
+          <div class="carousel-heart"></div>
+        </div>
+      </div>
+      <div class="carousel-row">
+        <div class="carousel-image">
+  
+        </div>
+        <div class="carousel-text-container">
+          <div class="carousel-text">
+            <div class="carousel-barname">Le tavernier</div>
+            <div class="carousel-rating"></div>
+          </div>
+          <div class="carousel-heart"></div>
+        </div>
+      </div>
+  
     </div>
-
-  </div>
+ </di >
   <div class="location-general-container">
     <div class="my-location-container">
       <div class="my-location-logo"></div>
