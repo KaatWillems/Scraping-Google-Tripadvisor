@@ -40,7 +40,4 @@ const BarSchema  = new mongoose.Schema({
 const Bar = mongoose.model('Bar',BarSchema);
 
 module.exports = {Bar, BarSchema};
-<<<<<<< HEAD
-=======
 
->>>>>>> 23e5373a46e4af15cb37d54c05ed533dcc91ce05
