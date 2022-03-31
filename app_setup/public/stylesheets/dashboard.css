@@ -421,6 +421,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 iframe {
     padding-top: 1vh;
+    height: 300;
 }
 
 .Log-in-container {

@@ -1,39 +1,42 @@
 const searchBar = document.getElementById('search_bar')
-const sugg = document.querySelector('.suggestions')
-
-searchBar.addEventListener('keyup', (event) => {
-  if(!searchBar.value == ""){
-    searchProfiles(searchBar.value)
-  }else{
-    sugg.innerHTML = ""
-  }
-
-})
+const carousel = document.querySelector('.carousel-general-container')
 
 
-const searchProfiles = (input) => {
-  fetch("profiles/search", {
-    method:'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({user_input: input})
-  })
-  .then(response => response.json())
-  .then(data => {
-    sugg.innerHTML = ""
-    data.data.forEach((profile) => {
-      sugg.insertAdjacentHTML('beforeend', `
-        <a href="/profiles/show/${profile._id}">
-          <div class="suggestion">
-            <div class="avatar"></div>
-            <div class="name">${profile.username}</div>
-          </div>
-        </a>
-        `)
-    })
-  })
-  .catch((err) =>{
-    console.log(err)
-  })
-}
+// searchBar.addEventListener('submit', (event) => {
+//   // event.preventDefault()
+//   // console.log(searchBar.value, "from searchProfiles.js")
+ 
+//   if(!searchBar.value == ""){
+//     carousel.style.display = "none"
+//     // searchBars(searchBar.value)
+//   }
+
+// })
+
+
+// const searchBars = (input) => {
+//   fetch("bars/search", {
+//     method:'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({user_input: input})
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data, "data front end")
+//     //   data.data.forEach((bars) => {
+//     //   // sugg.insertAdjacentHTML('beforeend', `
+//     //   //   <a href="/profiles/show/${profile._id}">
+//     //   //     <div class="suggestion">
+//     //   //       <div class="avatar"></div>
+//     //   //       <div class="name">${profile.username}</div>
+//     //   //     </div>
+//     //   //   </a>
+//     //   //   `)
+//     // })
+//   })
+//   .catch((err) =>{
+//     console.log(err)
+//   })
+// }

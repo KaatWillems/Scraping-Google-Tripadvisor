@@ -20,13 +20,15 @@ router.post("/new", async (req, res) => {
   }
 })
 
+// code diogostogram
+// router.post("/search", async (req, res) => {
+//   console.log(req.body)
+//   const profiles = await Profile.find({"username": {$regex: req.body.user_input}})
+//   res.send({data: profiles})
 
-router.post("/search", async (req, res) => {
-  console.log(req.body)
-  const profiles = await Profile.find({"username": {$regex: req.body.user_input}})
-  res.send({data: profiles})
+// })
 
-})
+
 
 const getUserProfileAndPosts = function(id){
   return Profile.findById(id).populate("posts")

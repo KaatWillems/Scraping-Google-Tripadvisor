@@ -66,7 +66,7 @@ app.use("/static", express.static("public"));
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
 app.use('/profiles',require('./routes/profiles'));
-//app.use('/posts',require('./routes/posts'));
+app.use('/bars',require('./routes/bars'));
 
 
 

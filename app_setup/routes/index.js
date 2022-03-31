@@ -38,6 +38,10 @@ router.get('/register', (req,res)=>{
 
 // }
 
+
+
+
+
 function getStars(bar) { 
   let rating = bar.ratings;
   ratingarr = rating.split(',')
@@ -64,6 +68,8 @@ function getStars(bar) {
 
 router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     if(!req.user.profile){
+
+    
       
 
 
