@@ -19,10 +19,7 @@ const writeBars = async () => {
       }
     }
   );
-
   console.log("Scrapping datlinq...");
-
-  // it will only save 200 bars because it only goes until the page 8 and then it bugs
   let datLinqBars = await scrapDatlinq();
   fs.writeFile(
     "./pre-data/datlinq-bars.json",
@@ -41,20 +38,18 @@ const writeBars = async () => {
 };
 
 const sendToDB = async () => {
-    let allBars = []
-    // let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
+    // let allBars = []
+    let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
     // googleBars.forEach(bar => {
     //     allBars.push(bar)
     // });
-    let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"))
-    datlinqBars.forEach(bar => {
-        allBars.push(bar)
-    });
-    // here we send all the data to the database
-    // for now we will write it in a json file
+    // let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"))
+    // datlinqBars.forEach(bar => {
+    //     allBars.push(bar)
+    // });
     fs.writeFile(
         "../app_setup/models/bars/allbars.json",
-        JSON.stringify(allBars),
+        JSON.stringify(googleBars),
         (err) => {
           if (err) console.log(err);
           else {
@@ -69,5 +64,4 @@ const sendToDB = async () => {
 }
 
 // CALL MAIN FUNCTION
-
 sendToDB()
