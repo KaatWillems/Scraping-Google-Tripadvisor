@@ -5,29 +5,32 @@
       <div class="review-rating"></div>
   </div>
 
-<div class="meters">
+<div class="meters-container">
     <div class="crowd"> 
         <p>Crowd</p>
         <input type="range" min="1" max="10" value="5" class="slider">
-        <span>Pretty quiet</span> <span>Room for more</span> <span>Full house</span>
+       <div class="text-crowd"> <span>Pretty quiet</span> <span>| Room for more |</span> <span>Full house</span></div>
     </div> 
 
     <div class="hygiene"> 
       <p>hygiene</p>
-      <div class="bar"></div>
-      <span>As clean as it gets</span> <span>Decent</span> <span>Everything's sticky</span>
-    </div> 
+      <input type="range" min="1" max="10" value="5" class="slider">
+      <div class="text-hygiene">
+          <span>As clean as it gets</span> <span>| Decent |</span> <span>Everything's sticky </span></div>
+     </div> 
 
     <div class="atmosphere"> 
       <p>Atmosphere</p>
-      <div class="bar"></div>
-      <span>Dancing</span> <span>Chatting</span>
+      <input type="range" min="1" max="10" value="5" class="slider">
+      <div class="text-atmo">
+        <span>Dancing</span> <span>Chatting</span></div>
     </div> 
 
     <div class="safety"> 
       <p>Safety</p>
-      <div class="bar"></div>
-      <span>I feel safe</span> <span>Creep alert</span>
+      <input type="range" min="1" max="10" value="5" class="slider">
+     <div class="text-safety"> 
+       <span>I feel safe</span> <span>Creep alert</span></div>
     </div> 
 
     <div class="review-commets">

@@ -16,7 +16,7 @@
     background-color: var(--white-bg);
     color: var(--font-black);
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     align-items: flex-start;
     margin-top:30px;
     margin-left:30px;
-    height: fit-content;
+    /* height: fit-content; */
     
     
 }
@@ -59,28 +59,39 @@
     }
 
 /* meters */
-.meters {
+.meters-container {
     border: solid 2px red;
     display:flex;
     flex-direction: column;
     align-items: center;
+    
     justify-content: space-around;
     margin-left:10px;
-    
+    width: 80vw;
     height: 80%;
     font-size:26pt;
-    overflow: auto;
-  
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    width: 100vw;
 
 }
 
 span {
     font-size: 18pt;
+    overflow: visible;
+    width: 5px !important;
+
 }
+
+.crowd {
+    
+}
+
 
 input[type="range"] {
     -webkit-appearance: none !important;
-    width: 100%;
+    width: 500px;
     height: 30px;
     
     background: -webkit-linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
@@ -96,11 +107,14 @@ input[type="range"] {
   
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    width: 35px;
-    height: 35px;
-    background-color: #4D194D;
+    width: 40px;
+    height: 40px;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/953976252727967744/logo_4.5.png);
+    background-size: contain;
+    /* background-color: #4D194D; */
     border-radius: 30px;
     box-shadow: 0px 0px 3px #3c6d59;
+    cursor: pointer;
     transition: all 0.5s ease;
   }
   input[type="range"]::-webkit-slider-thumb:hover {
