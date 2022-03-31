@@ -1,32 +1,11 @@
 const puppeteer = require("puppeteer");
 
 let bars = [],
-  quantity;
+  quantity,
+  counter = 0;
 
-const selectBar = async (page, i) => {
-  await autoScroll(page);
-  await autoScroll(page);
-  await autoScroll(page);
+const selectBar = async (page) => {
   let bar = {};
-  try {
-    await page.$$eval(
-      ".a4gq8e-aVTXAb-haAclf-jRmmHf-hSRGPd",
-      (elements, i) => elements[i].click(),
-      i
-    );
-  } catch (error) {
-    await page.reload();
-    await autoScroll(page);
-    await autoScroll(page);
-    await autoScroll(page);
-    await page.$$eval(
-      ".a4gq8e-aVTXAb-haAclf-jRmmHf-hSRGPd",
-      (elements, i) => elements[i].click(),
-      i
-    );
-    console.log("first click error");
-  }
-  await page.waitForTimeout("4000");
   try {
     bar.barname = await page.$$eval(
       ".x3AX1-LfntMc-header-title-title",
@@ -92,11 +71,8 @@ const selectBar = async (page, i) => {
     console.log("no rating found");
     bar.rating = "";
   }
-
-  console.log(bar);
   bars.push(bar);
-  await page.goBack();
-  await page.waitForNavigation();
+  await page.close();
 };
 
 const autoScroll = async (page) => {
@@ -119,6 +95,40 @@ const autoScroll = async (page) => {
   });
 };
 
+const newPage = async (i, browser, page) => {
+  const page1 = await browser.newPage();
+  let newUrl = await page.$$eval(
+    ".V0h1Ob-haAclf",
+    (elements, i) => elements[i].children[0].href,
+    i
+  );
+  await page1.goto(newUrl);
+  try {
+    await page1.waitForNavigation();
+  } catch (error) {
+    await page1.reload();
+    await page1.waitForNavigation();
+  }
+  await selectBar(page1);
+};
+
+const clickBars = async (browser, page) => {
+  for (let i = 0; i < 20; i++) {
+    await newPage(i, browser, page);
+    await page.waitForTimeout("1000");
+    if (i === 19) {
+      try {
+        await page.$$eval(".hV1iCc", (elements) => elements[1].click());
+        await page.waitForTimeout("2000");
+        console.log('bars collected = ' + bars.length)
+        i = -1
+      } catch (error) {
+          console.log('final bars = ' + bars.length)
+      }
+    }
+  }
+};
+
 const selectingGoogle = async () => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
@@ -130,25 +140,34 @@ const selectingGoogle = async () => {
   await autoScroll(page);
   await autoScroll(page);
   await autoScroll(page);
-  quantity = 21;
-  for (let i = 18; i < quantity; i++) {
-    console.log(i);
-    console.log(quantity);
-    await selectBar(page, i);
-    if (i === 19) {
-      await autoScroll(page);
-      await autoScroll(page);
-      await autoScroll(page);
-      try {
-        await page.$$eval(".hV1iCc", (elements) => elements[1].click());
-        await page.waitForTimeout('3000')
-        i = -1;
-      } catch (error) {
-        i = 19;
-      }
-    }
-  }
-  console.log(bars);
+  await page.waitForTimeout("2000");clickBars(browser, page);
+  //   if (counter === 20) {
+  //       console.log('yes')
+  //     await page.$$eval(".hV1iCc", (elements) => elements[1].click());
+  //     await page.waitForTimeout("2000");
+  //     counter = 0;
+  //     clickBars(browser, page);
+  //   } else {
+  //     clickBars(browser, page);
+  //   }
+
+  //   for (let i = 18; i < quantity; i++) {
+  //     console.log(i);
+  //     console.log(quantity);
+  //     await selectBar(page, i);
+  //     if (i === 19) {
+  //       await autoScroll(page);
+  //       await autoScroll(page);
+  //       await autoScroll(page);
+  //       try {
+  //         await page.$$eval(".hV1iCc", (elements) => elements[1].click());
+  //         await page.waitForTimeout('3000')
+  //         i = -1;
+  //       } catch (error) {
+  //         i = 19;
+  //       }
+  //     }
+  //   }
 };
 
 selectingGoogle();
