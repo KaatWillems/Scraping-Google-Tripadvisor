@@ -41,12 +41,11 @@ const writeBars = async () => {
 };
 
 const sendToDB = async () => {
-    await writeBars()
     let allBars = []
-    let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
-    googleBars.forEach(bar => {
-        allBars.push(bar)
-    });
+    // let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
+    // googleBars.forEach(bar => {
+    //     allBars.push(bar)
+    // });
     let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"))
     datlinqBars.forEach(bar => {
         allBars.push(bar)
@@ -54,7 +53,7 @@ const sendToDB = async () => {
     // here we send all the data to the database
     // for now we will write it in a json file
     fs.writeFile(
-        "./pre-data/allbars.json",
+        "../app_setup/models/bars/allbars.json",
         JSON.stringify(allBars),
         (err) => {
           if (err) console.log(err);
@@ -62,7 +61,7 @@ const sendToDB = async () => {
             console.log("All Bars saved succesfully\n");
             console.log("The written has the following contents:");
             console.log(
-              JSON.parse(fs.readFileSync("./pre-data/allbars.json"))
+              JSON.parse(fs.readFileSync("../app_setup/models/bars/allbars.json"))
             );
           }
         }
