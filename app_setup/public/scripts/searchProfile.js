@@ -1,7 +1,7 @@
 const searchBar = document.getElementById('search_bar')
 const carousel = document.querySelector('.carousel-general-container')
 
-
+//WE DONT NEED THIS BECAUSE OUR EVENTLISTENER IS IN THE DASHBOARD EJS (FORM ACTION)
 // searchBar.addEventListener('submit', (event) => {
 //   // event.preventDefault()
 //   // console.log(searchBar.value, "from searchProfiles.js")

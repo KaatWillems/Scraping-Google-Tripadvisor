@@ -42,7 +42,7 @@ router.get('/register', (req,res)=>{
 
 
 
-function getStars(bar) { 
+const getStars = (bar) => { 
   let rating = bar.ratings;
   ratingarr = rating.split(',')
   console.log(ratingarr)
@@ -67,7 +67,7 @@ function getStars(bar) {
 
 
 router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
-    if(!req.user.profile){
+    if(!req.user.Profile){
 
     
       
@@ -79,7 +79,7 @@ router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
       bars.forEach((bar) => {
         bararr.push({bar: bar, barrating: getStars(bar)})
       })
-      console.log(bararr)
+      //console.log(bararr)
       // let trendingbars
       res.render('dashboard',{
         user: req.user,
@@ -92,3 +92,4 @@ router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     }
 })
 module.exports = router;
+//module.exports = getStars()

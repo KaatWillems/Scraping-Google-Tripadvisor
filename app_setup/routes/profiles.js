@@ -30,20 +30,20 @@ router.post("/new", async (req, res) => {
 
 
 
-const getUserProfileAndPosts = function(id){
-  return Profile.findById(id).populate("posts")
-}
+// const getUserProfileAndPosts = function(id){
+//   return Profile.findById(id).populate("posts")
+// }
 
 
-const renderProfileWithPosts = async function(id, req, res){
+// const renderProfileWithPosts = async function(id, req, res){
 
-  const posts = await getUserProfileAndPosts(id)
-  console.log(posts)
-  res.render('profile', {
-    user: req.user,
-    posts: posts
-  })
-}
+//   const posts = await getUserProfileAndPosts(id)
+//   console.log(posts)
+//   res.render('profile', {
+//     user: req.user,
+//     posts: posts
+//   })
+// }
 
 
 router.get('/show/:id', (req, res) => {
