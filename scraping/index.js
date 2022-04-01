@@ -2,11 +2,9 @@ const { scrapGoogle } = require("./codes/google");
 const { scrapDatlinq } = require("./codes/datlinq");
 const fs = require("fs");
 
-// GOOGLE
-
-const writeBars = async () => {
-  console.log("Scrapping google...");
-  let googleBars = await scrapGoogle();
+const writeBars = async (googleBars) => {
+  // console.log("Scrapping google...");
+  // let googleBars = await scrapGoogle();
   fs.writeFile(
     "./pre-data/google-bars.json",
     JSON.stringify(googleBars),
@@ -19,55 +17,76 @@ const writeBars = async () => {
       }
     }
   );
+  // console.log("Scrapping datlinq...");
+  // let datLinqBars = await scrapDatlinq();
+  // fs.writeFile(
+  //   "./pre-data/datlinq-bars.json",
+  //   JSON.stringify(datLinqBars),
+  //   (err) => {
+  //     if (err) console.log(err);
+  //     else {
+  //       console.log("Datlinq Bars saved succesfully\n");
+  //       console.log("The written has the following contents:");
+  //       console.log(
+  //         JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"))
+  //       );
+  //     }
+  //   }
+  // );
+};
 
-  console.log("Scrapping datlinq...");
+const handleBars = () => {
+  let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"));
+  googleBars.forEach((bar) => {
+    let newArray = bar.address.split(" "),
+      newstring = "";
+    for (let index = 0; index < newArray.length; index++) {
+      const element = newArray[index];
+      if (element != "") {
+        if (element === newArray.slice(-1)) {
+          newstring = newstring + element;
+        } else {
+          newstring = newstring + element + " ";
+        }
+      }
+    }
+    let lastArray = newstring.split(""),
+      laststring = "";
+      lastArray.pop()
+    lastArray.forEach((word) => {
+      laststring = laststring + word
+    });
+    bar.address = laststring + " Belgium"
+  });
+  writeBars(googleBars)
+};
 
-  // it will only save 200 bars because it only goes until the page 8 and then it bugs
-  let datLinqBars = await scrapDatlinq();
+
+const sendToApp = async () => {
+  let allBars = [];
+  let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
+  // googleBars.forEach(bar => {
+  //     allBars.push(bar)
+  // });
+  let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"));
+  datlinqBars.forEach((bar) => {
+    allBars.push(bar);
+  });
   fs.writeFile(
-    "./pre-data/datlinq-bars.json",
-    JSON.stringify(datLinqBars),
+    "../app_setup/models/bars/allbars.json",
+    JSON.stringify(allBars),
     (err) => {
       if (err) console.log(err);
       else {
-        console.log("Datlinq Bars saved succesfully\n");
+        console.log("All Bars saved succesfully\n");
         console.log("The written has the following contents:");
         console.log(
-          JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"))
+          JSON.parse(fs.readFileSync("../app_setup/models/bars/allbars.json"))
         );
       }
     }
   );
 };
 
-const sendToDB = async () => {
-    let allBars = []
-    // let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
-    // googleBars.forEach(bar => {
-    //     allBars.push(bar)
-    // });
-    let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"))
-    datlinqBars.forEach(bar => {
-        allBars.push(bar)
-    });
-    // here we send all the data to the database
-    // for now we will write it in a json file
-    fs.writeFile(
-        "../app_setup/models/bars/allbars.json",
-        JSON.stringify(allBars),
-        (err) => {
-          if (err) console.log(err);
-          else {
-            console.log("All Bars saved succesfully\n");
-            console.log("The written has the following contents:");
-            console.log(
-              JSON.parse(fs.readFileSync("../app_setup/models/bars/allbars.json"))
-            );
-          }
-        }
-      );
-}
-
 // CALL MAIN FUNCTION
-
-sendToDB()
+sendToApp()
