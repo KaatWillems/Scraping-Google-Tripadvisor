@@ -728,6 +728,149 @@ a {
 
 
 }
+
+/*--FILTER --*/
+
+.filter-container{
+    background-color: whitesmoke;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+
+
+.filter-meters-container {
+    /* border: solid 2px red; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: space-around;    
+    text-align: center;
+    margin-top: 30px;
+    /* width: 100vw; */ 
+
+}
+
+.container-clear-x{
+    display:flex;
+    justify-content: space-between;
+   
+}
+
+.clear{
+    border: solid 1px #4D194D;
+    color: #4D194D;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 3.5rem;
+    margin-top:50px;
+    /* text-transform: uppercase; */
+}
+
+.x{
+    height: 30px;
+    width: 30px;
+    margin-top:30px;
+    font-size: 5rem;
+}
+
+.explain-filter-meters {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    
+}
+
+.filter-crowd {
+    
+     padding: 15px; 
+    
+}
+
+.filter-crowd p{
+     
+    font-size:4.5rem;
+    font-weight: bold;
+    
+        
+}
+
+    .filter-labels-crowd {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:25px;
+        margin-bottom: 20px;
+        font-size: 3.5rem;    
+    }
+
+.filter-hygiene {
+    /* margin-top: 20px;
+    box-shadow: 5px 5px 50px  grey;
+    border-radius: 30px; */
+     padding: 15px; 
+}
+
+    .filter-hygiene p{
+        font-size:4.5rem;
+        font-weight: bold;
+        
+    }
+
+    .filter-labels-hygiene {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:15px;
+        font-size: 3.5rem;    
+    }
+
+.filter-atmosphere {
+    padding:15px;
+    /* box-shadow: 5px 5px 20px black;
+        border-radius: 30px; */
+}
+
+    .filter-atmosphere p{
+        
+        font-size:4.5rem;
+        font-weight: bold;
+        
+    }
+    .filter-labels-atmo {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:15px;
+        font-size: 3.5rem;  
+         
+    }
+
+.filter-safety{
+    
+    padding:15px;
+}
+
+    .filter-safety p{        
+        font-size:4.5rem;
+        font-weight: bold;
+        
+    }
+
+    .filter-labels-safety {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:15px;
+        font-size: 3.5rem;    
+    }
+
+    .apply-filter {
+    background-color: #4D194D;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 3.5rem;
+    margin-top:50px;
+
+    }    
+
 /*-- Nav-bar -- CSS --*/
 
 .navigation-tab {
