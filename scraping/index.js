@@ -65,13 +65,13 @@ const handleBars = () => {
 const sendToApp = async () => {
   let allBars = [];
   let googleBars = JSON.parse(fs.readFileSync("./pre-data/google-bars.json"))
-  googleBars.forEach(bar => {
-      allBars.push(bar)
-  });
-  // let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"));
-  // datlinqBars.forEach((bar) => {
-  //   allBars.push(bar);
+  // googleBars.forEach(bar => {
+  //     allBars.push(bar)
   // });
+  let datlinqBars = JSON.parse(fs.readFileSync("./pre-data/datlinq-bars.json"));
+  datlinqBars.forEach((bar) => {
+    allBars.push(bar);
+  });
   fs.writeFile(
     "../app_setup/models/bars/allbars.json",
     JSON.stringify(allBars),
