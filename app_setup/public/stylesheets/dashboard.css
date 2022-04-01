@@ -421,6 +421,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 iframe {
     padding-top: 1vh;
+    height: 300;
 }
 
 .Log-in-container {
@@ -526,6 +527,8 @@ a {
     align-items: center;
 }
 
+
+
 /*-- Searchbar -- CSS --*/
 
 
@@ -589,6 +592,16 @@ a {
 
 /*-- Carousel -- CSS --*/
 
+.carousel-general-container {
+    background-color: #4D194D;
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center; 
+}
+
 .carousel-container {
     height: 30vh;
     width: 100%;
@@ -640,12 +653,16 @@ a {
 .carousel-rating {
     width: 500px;
     height: 50px;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
+    
+    /* background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     
 }
+
+
+
 .carousel-barname {
     font-size: 4rem;
     font-family: 'Lato', sans-serif;
