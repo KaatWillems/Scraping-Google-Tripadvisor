@@ -24,9 +24,8 @@ Flexbox and floats are used as a fallback so that browsers which don't support g
 body {
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: #4D194D;
     color: #262626;
-    height: 300vh;
 }
 
 img {
@@ -520,7 +519,7 @@ a {
 .dashboard-container {
     background-color: #4D194D;
     width: 100vw;
-    height: 300vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -595,7 +594,7 @@ a {
 .carousel-general-container {
     background-color: #4D194D;
     width: 100vw;
-    height: 300vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -677,20 +676,57 @@ a {
 .location-general-container {
     font-size: 3rem;
     font-family: 'Lato', sans-serif;
-    width: 90vw;
+    width: 80vw;
     height: 80vh;
-    background-color: red;
     display: flex;
     flex-direction: column;
+    color: #dadada;
 
+}
+.my-location-text {
+    width: 90%;
+}
+.location-text {
+    width: 90%;
+}
+.location-title {
+    margin-bottom: 50px;
 }
 .my-location-container {
-    background-color: #006466;
-    font-size: 5rem;
+    font-size: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px 50px 0px;
+    
 
 }
+.my-location-logo {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+}
 .location-container {
-    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 6rem;
+    padding: 3rem 0px 3rem 0px;
+
+
+}
+.location-logo {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+
+
 }
 /*-- Nav-bar -- CSS --*/
 
