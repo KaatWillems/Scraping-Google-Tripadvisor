@@ -4,19 +4,30 @@
 /* colors: */
 :root {
 --purple-bg: #4D194D;
---white-bg: whitesmoke;
+--whitesmoke-bg: whitesmoke;
 --nav-bg: #FFFFFF;
 --font-black: black;
 }
 
 /* review page */
 
+body{
+    box-sizing: border-box;
+    
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--whitesmoke-bg);
+    color: var(--font-black);
+    overflow: auto scroll;
+    height: 130vh;
+}
 
 .review-container{  
     /* border:solid 2px purple;  */
+    
     font-family: 'Lato', sans-serif;
-    background-color: var(--white-bg);
-    color: var(--font-black);
+   
     /* width: 100vw; */
     /* height: 100vh; */
     
@@ -24,9 +35,7 @@
     flex-direction: column;
     /* align-items: space-between; */
     
-    box-sizing: border-box;
-    margin:0;
-    padding: 0;
+    
 }
 
 /* text on the left */
@@ -109,8 +118,6 @@
 }
 
     .hygiene p{
-        /* box-shadow: 5px 5px 20px black;
-        border-radius: 30px; */
         font-size:4.5rem;
         font-weight: bold;
         
@@ -125,11 +132,12 @@
 
 .atmosphere {
     padding:15px;
+    /* box-shadow: 5px 5px 20px black;
+        border-radius: 30px; */
 }
 
     .atmosphere p{
-        /* box-shadow: 5px 5px 20px black;
-        border-radius: 30px; */
+        
         font-size:4.5rem;
         font-weight: bold;
         
@@ -138,16 +146,17 @@
         display:flex; 
         justify-content: space-between;
         margin-top:15px;
-        font-size: 3.5rem;    
+        font-size: 3.5rem;  
+         
     }
 
 .safety{
+    /* box-shadow: 5px 5px 20px black;
+        border-radius: 30px; */
     padding:15px;
 }
 
-    .safety p{
-        /* box-shadow: 5px 5px 20px black;
-        border-radius: 30px; */
+    .safety p{        
         font-size:4.5rem;
         font-weight: bold;
         
@@ -159,6 +168,38 @@
         margin-top:15px;
         font-size: 3.5rem;    
     }
+
+.review-comments {
+    padding:15px;
+}    
+
+    .review-comments p {
+        font-size:4.5rem;
+        font-weight: bold;
+    }
+    .review-comments input {
+       width: 800px;
+       height: 100px;
+       border-radius: 30px;
+       border: solid 1px var(--purple-bg);
+       font-size: 3rem;
+    }   
+
+.submitbtn-review {
+    background-color: var(--purple-bg);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 3.5rem;
+    margin-top:50px;
+    /* box-shadow: 5px 5px 20px var(--purple-bg) */
+}
+
+.submitbtn-review :hover {
+     /* box-shadow: 5px 5px 20px var(--purple-bg) */
+    
+    
+}
 
 /* slider bars: */
 
@@ -195,12 +236,12 @@ input[type="range"] {
     cursor: pointer;
     transition: all 0.5s ease;
   }
-  input[type="range"]::-webkit-slider-thumb:hover {
+  /* input[type="range"]::-webkit-slider-thumb:hover {
     background-color: #457d66;
   }
   input[type="range"]::-webkit-slider-thumb:active {
     box-shadow: 0px 0px 1px #3c6d59;
-  }
+  } */
   
 /*-- Nav-bar -- CSS --*/
 

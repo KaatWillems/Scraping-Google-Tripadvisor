@@ -5,42 +5,46 @@
       <div class="review-rating"></div>
   </div>
 
-<div class="meters-container">
-    <div class="crowd"> 
-        <p>Crowd</p>
+  <div class="meters-container">
+  <form>
+      <div class="crowd"> 
+          <p>Crowd</p>
+          <input type="range" min="1" max="9" value="5" class="slider">
+  
+         <div class="labels-crowd"> 
+              <span>Pretty quiet</span> <span>Room for more</span> <span>Full house</span>
+          </div>
+      </div> 
+  
+      <div class="hygiene"> 
+        <p>Hygiene</p>
+        <input type="range" min="1" max="9"  class="slider">
+        <div class="labels-hygiene">
+            <span>As clean as it gets</span> <span>Decent</span> <span>Everything's sticky </span>
+          </div>
+       </div> 
+  
+      <div class="atmosphere"> 
+        <p>Atmosphere</p>
         <input type="range" min="1" max="9" value="5" class="slider">
+        <div class="labels-atmo">
+          <span>Dancing</span> <span>Chatting</span></div>
+      </div> 
+  
+      <div class="safety"> 
+        <p>Safety</p>
+        <input type="range" min="1" max="9" value="5" class="slider">
+       <div class="labels-safety"> 
+         <span>I feel safe</span> <span>Creep alert</span></div>
+      </div> 
+  
+      <div class="review-comments">
+        <p>Comments</p>
+        <input type="text" placeholder="Leave a comment">
+      </div>
 
-       <div class="labels-crowd"> 
-            <span>Pretty quiet</span> <span>Room for more</span> <span>Full house</span>
-        </div>
-    </div> 
-
-    <div class="hygiene"> 
-      <p>Hygiene</p>
-      <input type="range" min="1" max="9"  class="slider">
-      <div class="labels-hygiene">
-          <span>As clean as it gets</span> <span>Decent</span> <span>Everything's sticky </span>
-        </div>
-     </div> 
-
-    <div class="atmosphere"> 
-      <p>Atmosphere</p>
-      <input type="range" min="1" max="9" value="5" class="slider">
-      <div class="labels-atmo">
-        <span>Dancing</span> <span>Chatting</span></div>
-    </div> 
-
-    <div class="safety"> 
-      <p>Safety</p>
-      <input type="range" min="1" max="9" value="5" class="slider">
-     <div class="labels-safety"> 
-       <span>I feel safe</span> <span>Creep alert</span></div>
-    </div> 
-
-    <div class="review-commets">
-      <p>Comments</p>
-      <input type="text" placeholder="Leave a comment">
-    </div>
+      <button class="submitbtn-review" >Submit review</button>
+  </form>
 
 </div>
 
