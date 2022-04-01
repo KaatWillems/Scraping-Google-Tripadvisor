@@ -33,6 +33,7 @@ router.get('/show', (req,res)=>{
 })
 
 
+
 //diogo 
 // const getProfileAndPopulate = function(id){
 //   return Profile.findById(id).populate("posts")
