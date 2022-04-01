@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const searchBar = document.getElementById('search_bar')
 const carousel = document.querySelector('.carousel-general-container')
 
@@ -40,3 +41,11 @@ const carousel = document.querySelector('.carousel-general-container')
 //     console.log(err)
 //   })
 // }
+=======
+const searchbar2 = document.getElementById('test1')
+
+searchbar2.addEventListener('click', () =>{
+  console.log ('test')
+})
+
+>>>>>>> 4377867a319e564b782ea32e39c7500adb52c2b2

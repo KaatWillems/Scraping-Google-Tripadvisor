@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Profile = require("../models/profile").Profile;
+<<<<<<< HEAD
 const Bar = require("../models/bar").Bar
 //const getStars = require("index").getStars
 
@@ -88,3 +89,15 @@ router.post("/search", async (req, res) => {
 
 
   module.exports  = router;
+=======
+const User = require("../models/user")
+const Bar = require("..models/bars").Bar;
+// const cloudinary = require("cloudinary");
+
+router.post("/search", async (req, res) => {
+    console.log(req.body)
+    const profiles = await Profile.find({"username": {$regex: req.body.user_input}})
+    res.send({data: profiles})
+  
+  })
+>>>>>>> 4377867a319e564b782ea32e39c7500adb52c2b2
