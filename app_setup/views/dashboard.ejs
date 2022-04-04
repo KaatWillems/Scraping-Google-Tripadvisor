@@ -1,8 +1,5 @@
 
 <div class="dashboard-container">
-  <div class="set-the-bar-title">
-    <div class="set-the-logo"></div>
-  </div>
   <div class="set-the-bar-search-bar">
     <div class="icon-loupe"></div>
     <form action="/bars/search" method="POST" id="search_bar">
@@ -19,7 +16,7 @@
       <% bars.forEach((bar) => { %>
   
       <div class="carousel-row">
-        <div class="carousel-image" style="background-image:url(<%= bar.bar.pictureUrl%>)">
+        <div class="carousel-image" style=`background-image:url(<% bar.bar.pictureUrl %>)`>
   
         </div>
         <div class="carousel-text-container">
@@ -127,13 +124,6 @@
 
   </div>
 
-
-  <div class="navigation-tab">
-    <div class="navigation-explore"></div>
-    <div class="navigation-review"></div>
-    <div class="navigation-favorites"></div>
-    <div class="navigation-profile"></div>
-  </div>
 
 
   <div class="filter-container">
