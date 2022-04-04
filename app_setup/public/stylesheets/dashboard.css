@@ -437,9 +437,19 @@ iframe {
 .set-the-bar-title {
     margin-top: 4vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 15vh;
     background-color: #4D194D;
+}
+.set-the-logo {
+    height:150px;
+    width:600px;
+    background-image: url('./img/Artboard_14x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 .set-the-bar-text {
     display: flex;
