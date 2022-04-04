@@ -446,7 +446,7 @@ iframe {
 .set-the-logo {
     height:150px;
     width:600px;
-    background-image: url('./img/Artboard_14x.png');
+    background-image: url('../assets/img/Artboard_14x.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
