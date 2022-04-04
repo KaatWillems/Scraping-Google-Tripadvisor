@@ -9,9 +9,7 @@ Flexbox and floats are used as a fallback so that browsers which don't support g
 */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Satisfy&display=swap');/* Base Styles */
 
-:root {
-    font-size: 10px;
-}
+
 
 *,
 *::before,
@@ -22,10 +20,16 @@ Flexbox and floats are used as a fallback so that browsers which don't support g
 }
 
 body {
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 2.2rem;
     min-height: 100vh;
+    width: 100vw;
     background-color: #4D194D;
     color: #262626;
+}
+.inner-body {
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .review-container {
@@ -43,16 +47,6 @@ img {
   background-size: cover;
   background-position: center;
 
-}
-.search_container{
-  width: 100vw;
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-#search_bar{
-  width: 200px;
 }
 .suggestions{
   width: 200px;
@@ -142,12 +136,10 @@ img {
 
 .profile-user-name {
     display: inline-block;
-    font-size: 3.2rem;
     font-weight: 300;
 }
 
 .profile-edit-btn {
-    font-size: 1.4rem;
     line-height: 1.8;
     border: 0.1rem solid #dbdbdb;
     border-radius: 0.3rem;
@@ -156,7 +148,6 @@ img {
 }
 
 .profile-settings-btn {
-    font-size: 2rem;
     margin-left: 1rem;
 }
 
@@ -166,7 +157,6 @@ img {
 
 .profile-stats li {
     display: inline-block;
-    font-size: 1.6rem;
     line-height: 1.5;
     margin-right: 4rem;
     cursor: pointer;
@@ -177,7 +167,6 @@ img {
 }
 
 .profile-bio {
-    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.5;
     margin-top: 2.3rem;
@@ -226,7 +215,6 @@ img {
 
 .gallery-item-info li {
     display: inline-block;
-    font-size: 1.7rem;
     font-weight: 600;
 }
 
@@ -238,7 +226,6 @@ img {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    font-size: 2.5rem;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
@@ -266,87 +253,6 @@ img {
 }
 
 /* Media Query */
-
-@media screen and (max-width: 40rem) {
-    .profile {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 4rem 0;
-    }
-
-    .profile::after {
-        display: none;
-    }
-
-    .profile-image,
-    .profile-user-settings,
-    .profile-bio,
-    .profile-stats {
-        float: none;
-        width: auto;
-    }
-
-    .profile-image img {
-        width: 7.7rem;
-    }
-
-    .profile-user-settings {
-        flex-basis: calc(100% - 10.7rem);
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-    }
-
-    .profile-user-name {
-        font-size: 2.2rem;
-    }
-
-    .profile-edit-btn {
-        order: 1;
-        padding: 0;
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .profile-edit-btn {
-        margin-left: 0;
-    }
-
-    .profile-bio {
-        font-size: 1.4rem;
-        margin-top: 1.5rem;
-    }
-
-    .profile-edit-btn,
-    .profile-bio,
-    .profile-stats {
-        flex-basis: 100%;
-    }
-
-    .profile-stats {
-        order: 1;
-        margin-top: 1.5rem;
-    }
-
-    .profile-stats ul {
-        display: flex;
-        text-align: center;
-        padding: 1.2rem 0;
-        border-top: 0.1rem solid #dadada;
-        border-bottom: 0.1rem solid #dadada;
-    }
-
-    .profile-stats li {
-        font-size: 1.4rem;
-        flex: 1;
-        margin: 0;
-    }
-
-    .profile-stat-count {
-        display: block;
-    }
-}
-
 /* Spinner Animation */
 
 @keyframes loader {
@@ -434,13 +340,12 @@ iframe {
     display: flex;
     flex-direction: column;
 }
-.set-the-bar-title {
+.header {
     margin-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 15vh;
+    width: 100%;
     background-color: #4D194D;
 }
 .set-the-logo {
@@ -463,13 +368,11 @@ iframe {
 }
 .set-the-bar-moto {
     font-family: 'Satisfy', cursive;
-    font-size: 7rem;
     color: white;
 }
 .set-the-bar-intro {
     text-align: center;
     font-family: 'Lato', sans-serif;
-    font-size: 4rem;
     color: white;
 }
 .input-info-container {
@@ -488,7 +391,6 @@ iframe {
     font-family: 'Lato', sans-serif;
     color: #4D194D;
     background-color: white;
-    font-size: 5rem;
     border-radius: 70px;
     width: 80vw;
     height: 6vh;
@@ -498,7 +400,6 @@ iframe {
     margin-top: 3rem;
     font-family: 'Lato', sans-serif;
     justify-content: center;
-    font-size: 3rem;
     display: flex;
     color: whitesmoke ;
 }
@@ -515,7 +416,6 @@ iframe {
 }
 .no-account {
     margin-top: 8vh;
-    font-size: 3rem;
     font-family: 'Lato', sans-serif;
     color: black;
     text-align: center;
@@ -532,8 +432,7 @@ a {
 
 .dashboard-container {
     background-color: #4D194D;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -544,19 +443,22 @@ a {
 
 /*-- Searchbar -- CSS --*/
 
-
+.search-container {
+    display: flex;
+    width: 100%;
+    height: 6%;
+    justify-content:center;
+    align-items: center;
+}
 .set-the-bar-search-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 3rem;
     background-color: rgba(255, 255, 255, 0.356);
-    width: 80vw;
-    height: 3vh;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     text-align: center;
-    font-size: 3rem;
-    font-family: 'Lato', sans-serif;
     padding-left: 10px;
     padding-right: 10px;
 
@@ -580,10 +482,8 @@ a {
 .search-input {
     background-color: #4d194d00;
     border: none;
-    font-size: 4rem;
-    font-family: 'Lato', sans-serif;
     width: 85%;
-
+    font-size: 1.5em;
 }
 .search-input::placeholder {
     font-weight: 400;
@@ -593,44 +493,30 @@ a {
 
 .title {
     color: #dbdbdb;
-    font-size: 5rem;
     font-weight: 400;
     font-family: 'Lato', sans-serif;
 }
-.title-container {
-    width: 80%;
-    float: left;
-    margin: 2rem;
-}
+
 
 /*-- Carousel -- CSS --*/
 
 .carousel-general-container {
     background-color: #4D194D;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    align-items: center; 
 }
 
 .carousel-container {
-    height: 30vh;
     width: 100%;
     display: flex;
     align-items: center;
     overflow: scroll;
-    padding-left:70px;
-
-
 }
 .carousel-row {
-    flex: 0 0 85%;
-    height: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 .carousel-container::-webkit-scrollbar {
@@ -643,8 +529,8 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 95%;
-    height: 70%;
+    width: 500px;
+    height: 300px;
 }
 .carousel-text-container {
     width: 95%;
@@ -677,7 +563,6 @@ a {
 
 
 .carousel-barname {
-    font-size: 4rem;
     font-family: 'Lato', sans-serif;
     color: whitesmoke;
     width: 500px;
@@ -688,49 +573,15 @@ a {
 /* -- Location - container --*/
 
 .location-general-container {
-    font-size: 3rem;
-    font-family: 'Lato', sans-serif;
-    width: 80vw;
-    height: 80vh;
     display: flex;
+    font-size: 1.5em;
     flex-direction: column;
     color: #dadada;
-
-}
-.my-location-text {
-    width: 90%;
-}
-.location-text {
-    width: 90%;
-}
-.location-title {
-    margin-bottom: 50px;
-}
-.my-location-container {
-    font-size: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0px 50px 0px;
-    
-
-}
-.my-location-logo {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 70px;
-    width: 70px;
 }
 .location-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    font-size: 6rem;
-    padding: 3rem 0px 3rem 0px;
-
-
+    margin-top: 40px;
 }
 .location-logo {
     background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png');
@@ -738,17 +589,26 @@ a {
     background-position: center;
     background-size: cover;
     height: 70px;
-    width: 70px;
-
-
+    width: 55px;
+    margin-right: 20px;
 }
 
+/* RESULTS OF SEARCH */
+.filterby-container {
+    background-color: #006466;
+    display: flex;
+    justify-content: space-between;
+}
 /*--FILTER --*/
-
+button {
+    font-size:1em;
+    border-radius: 32px;
+    border: none;
+}
 .filter-container{
     background-color: whitesmoke;
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -777,7 +637,6 @@ a {
     background-color: transparent;
     padding: 10px 30px;
     border-radius: 30px;
-    font-size: 3.5rem;
     margin-top:50px;
     /* text-transform: uppercase; */
 }
@@ -786,11 +645,9 @@ a {
     height: 30px;
     width: 30px;
     margin-top:30px;
-    font-size: 5rem;
 }
 
 .explain-filter-meters {
-    font-size: 3rem;
     margin-bottom: 30px;
     
 }
@@ -803,7 +660,6 @@ a {
 
 .filter-crowd p{
      
-    font-size:4.5rem;
     font-weight: bold;
     
         
@@ -814,7 +670,6 @@ a {
         justify-content: space-between;
         margin-top:25px;
         margin-bottom: 20px;
-        font-size: 3.5rem;    
     }
 
 .filter-hygiene {
@@ -825,7 +680,6 @@ a {
 }
 
     .filter-hygiene p{
-        font-size:4.5rem;
         font-weight: bold;
         
     }
@@ -834,7 +688,6 @@ a {
         display:flex; 
         justify-content: space-between;
         margin-top:15px;
-        font-size: 3.5rem;    
     }
 
 .filter-atmosphere {
@@ -845,7 +698,6 @@ a {
 
     .filter-atmosphere p{
         
-        font-size:4.5rem;
         font-weight: bold;
         
     }
@@ -853,7 +705,6 @@ a {
         display:flex; 
         justify-content: space-between;
         margin-top:15px;
-        font-size: 3.5rem;  
          
     }
 
@@ -863,7 +714,6 @@ a {
 }
 
     .filter-safety p{        
-        font-size:4.5rem;
         font-weight: bold;
         
     }
@@ -871,8 +721,7 @@ a {
     .filter-labels-safety {
         display:flex; 
         justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;    
+        margin-top:15px; 
     }
 
     .apply-filter {
@@ -880,7 +729,6 @@ a {
     color: white;
     padding: 10px 30px;
     border-radius: 30px;
-    font-size: 3.5rem;
     margin-top:50px;
 
     }    
@@ -889,7 +737,7 @@ a {
 
 .navigation-tab {
     width: 100vw;
-    height: 5vh;
+    height: 8vh;
     background-color: #FFFFFF;
     display: flex;
     justify-content: space-around;
@@ -897,36 +745,42 @@ a {
     position: fixed;
     bottom: 0;
 }
-.navigation-explore {
-    width: 200px;
-    height: 200px;
+.nav-links {
+    height: 100%;
+    width: 100%;
+}
+.nav-button {
+    display: flex;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+}
+.navigation-explore {
     background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
 }
 .navigation-review {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
 }
 .navigation-favorites {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
 }
 .navigation-profile {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
 }
 
+/* PRESET CLASSES */
+.mgtop-80px {
+    margin-top:80px;
+}
+.mgtop-40px {
+    margin-top: 40px;
+}
+.mgtop-25px {
+    margin-top: 25px;
+}
+.mgtop-10px {
+    margin-top: 10px;
+}

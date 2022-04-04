@@ -7,19 +7,19 @@
 
 </head>
 <body>
-<div class="dashboard-container">
-    <div class="set-the-bar-title">
+  <div class="inner-body">
+    <div class="header">
       <div class="set-the-logo"></div>
-    </div>
+      </div>
 <%- body %>
-
+</div>
 
 <% if(typeof user != 'undefined'){ %>
-<div class="navigation-tab-review">
-  <div class="navigation-explore"></div>
-  <div class="navigation-review"></div>
-  <div class="navigation-favorites"><a href="/favorites">hola</a></div>
-  <div class="navigation-profile"></div>
+<div class="navigation-tab">
+  <div class="nav-button navigation-explore"><a class='nav-links' href="/dashboard"></a></div>
+  <div class="nav-button navigation-review"><a class='nav-links' href="/review"></a></div>
+  <div class="nav-button navigation-favorites"><a class='nav-links' href="/favorites"></a></div>
+  <div class="nav-button navigation-profile"><a class='nav-links' href="/profiles"></a></div>
 </div>
 <% } %>
 <script src="/static/scripts/main.js"></script>
