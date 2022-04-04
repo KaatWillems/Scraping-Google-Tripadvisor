@@ -28,6 +28,10 @@ body {
     color: #262626;
 }
 
+.review-container {
+background-color: whitesmoke;
+}
+
 img {
     display: block;
 }
